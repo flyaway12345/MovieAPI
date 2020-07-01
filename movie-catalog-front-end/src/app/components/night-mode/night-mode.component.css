@@ -1,0 +1,29 @@
+body.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+body.a{
+    color: #111;
+}
+
+body.button {
+    background-color: #eee;
+    color: #111;
+}
+
+body.light-mode {
+    background-color: #eee;
+    color: #111;
+}
+
+body.a {
+    color: #111;
+}
+
+body.button {
+    background-color: #111;
+    color: #eee;
+}
+
+

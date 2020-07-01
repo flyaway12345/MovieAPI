@@ -1,0 +1,74 @@
+<h1 class="text-center">Edit the information about the Movie</h1>
+<div class="container">
+    <form (ngSubmit)="editMovie()">
+
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control" required [(ngModel)]="movie.id" name="id" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" required [(ngModel)]="movie.title" name="title">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" required [(ngModel)]="movie.description" name="description">
+        </div>
+
+        <div class="form-group">
+            <label for="recommended">Recommended</label>
+            <select class="form-control" required [(ngModel)]="movie.recommended" name="genre">
+                <option selected>Would You Recommend This Movie?</option>
+                <option *ngFor="let enum of recommendedEnum | keyvalue">{{ enum.value }}</option>
+            </select>
+                </div>
+
+
+        <div class="form-group">
+            <label for="cast">Cast</label>
+            <input type="text" class="form-control" required [(ngModel)]="movie.cast" name="cast" >
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <select class="form-control" required [(ngModel)]="movie.genre" name="genre">
+                <option selected>Choose a Genre that best describes your movie</option>
+                <option *ngFor="let enum of genreEnum | keyvalue">{{ enum.value }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <select class="form-control" required [(ngModel)]="movie.rating" name="rating">
+              <option selected>Select the rating for the movie</option>
+              <option *ngFor="let enum of ratingEnum | keyvalue">{{enum.value}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="release_date">Release Date</label>
+            <input type="text" class="form-control" required [(ngModel)]="movie.release_date" name="release_date">
+          </div>
+        
+          <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="text" class="form-control" required [(ngModel)]="movie.duration" name="duration">
+          </div>
+        <div class="form-group">
+            <label for="imgURL">Upload an Image</label>
+            <!-- <input type="file" class="form-control" (change)="handleUpload($event)" [(ngModel)]="movie.imgURL"required  name="imgURL"> -->
+            <input type="file" class="form-control" required [(ngModel)]="movie.imgURL" name="imgURL" >
+            <!-- <app-image-upload></app-image-upload> -->
+          </div>
+          <div class="form-group">
+            <label for="imgURL">Or Link To Image</label>
+            <!-- <input type="file" class="form-control" (change)="handleUpload($event)" [(ngModel)]="movie.imgURL"required  name="imgURL"> -->
+            <input type="text" class="form-control" required [(ngModel)]="movie.imgURL" name="imgURL" >
+            <!-- <app-image-upload></app-image-upload> -->
+          </div>
+        <button type="submit" class="btn btn-success">Submit Edit</button>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="goBackToList()" id="goBack">Go Back</button>
+    </form>
+</div>
