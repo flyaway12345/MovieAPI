@@ -1,11 +1,11 @@
-package org.yearup.moviecatalog.handler;
+package org.yearup.moviecatalog.movie.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.yearup.moviecatalog.dto.ErrorDetail;
-import org.yearup.moviecatalog.exception.ResourceNotFoundException;
+import org.yearup.moviecatalog.movie.dto.ErrorDetail;
+import org.yearup.moviecatalog.movie.exception.ResourceNotFoundException;
 
 import javax.servlet.http.HttpServletRequest;
 

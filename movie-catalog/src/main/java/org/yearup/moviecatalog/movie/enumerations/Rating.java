@@ -1,4 +1,4 @@
-package org.yearup.moviecatalog.enumerations;
+package org.yearup.moviecatalog.movie.enumerations;
 
 public enum Rating {
     G("G"),

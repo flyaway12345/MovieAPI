@@ -1,4 +1,4 @@
-package org.yearup.moviecatalog.controller;
+package org.yearup.moviecatalog.movie.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import org.yearup.moviecatalog.domain.Movie;
-import org.yearup.moviecatalog.service.MovieService;
+import org.yearup.moviecatalog.movie.domain.Movie;
+import org.yearup.moviecatalog.movie.service.MovieService;
 
 import javax.validation.Valid;
 import java.net.URI;

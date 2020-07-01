@@ -1,4 +1,4 @@
-package org.yearup.moviecatalog.dto;
+package org.yearup.moviecatalog.movie.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

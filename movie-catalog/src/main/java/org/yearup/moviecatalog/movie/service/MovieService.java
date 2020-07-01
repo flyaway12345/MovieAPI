@@ -1,10 +1,10 @@
-package org.yearup.moviecatalog.service;
+package org.yearup.moviecatalog.movie.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yearup.moviecatalog.domain.Movie;
-import org.yearup.moviecatalog.exception.ResourceNotFoundException;
-import org.yearup.moviecatalog.repository.MovieRepository;
+import org.yearup.moviecatalog.movie.domain.Movie;
+import org.yearup.moviecatalog.movie.exception.ResourceNotFoundException;
+import org.yearup.moviecatalog.movie.repository.MovieRepository;
 
 import java.util.ArrayList;
 import java.util.List;

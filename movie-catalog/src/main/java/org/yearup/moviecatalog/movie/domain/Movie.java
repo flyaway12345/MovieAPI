@@ -1,11 +1,11 @@
-package org.yearup.moviecatalog.domain;
+package org.yearup.moviecatalog.movie.domain;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.yearup.moviecatalog.enumerations.Genre;
-import org.yearup.moviecatalog.enumerations.Rating;
-import org.yearup.moviecatalog.enumerations.Recommended;
+import org.yearup.moviecatalog.movie.enumerations.Genre;
+import org.yearup.moviecatalog.movie.enumerations.Rating;
+import org.yearup.moviecatalog.movie.enumerations.Recommended;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
