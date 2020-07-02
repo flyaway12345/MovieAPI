@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.yearup.moviecatalog.movie.domain.Movie;
+import org.yearup.moviecatalog.movie.dto.SuccessfulResponseDetail;
 import org.yearup.moviecatalog.movie.service.MovieService;
 
 import javax.validation.Valid;
@@ -45,6 +46,20 @@ public class MovieController {
         httpHeaders.setLocation(newMovieUri);
         return new ResponseEntity<>(movie, httpHeaders, HttpStatus.CREATED);
     }
+    //Needs Work
+//    @RequestMapping(method = RequestMethod.POST, value = "/accounts/{userId}/movies")
+//    public ResponseEntity<?> addMovieToAccount(@RequestBody Movie movie, @PathVariable Long userId){
+//        movieService.addMovieToAccount(movie, userId);
+//        HttpHeaders headers = new HttpHeaders();
+//        URI newMovieUri = ServletUriComponentsBuilder
+//                .fromCurrentRequest()
+//                .path("/movies")
+//                .buildAndExpand(movie.getId())
+//                .toUri();
+//        headers.setLocation(newMovieUri);
+//        SuccessfulResponseDetail successfulResponseDetail = new SuccessfulResponseDetail(HttpStatus.CREATED.value(), "Added movie to account", movie );
+//        return new ResponseEntity<>(successfulResponseDetail, headers, HttpStatus.CREATED);
+//    }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/movies/{id}")
     public ResponseEntity<?> updateMovieById(@Valid @RequestBody Movie movie, @PathVariable Long id) {
@@ -62,22 +77,22 @@ public class MovieController {
 //    public List<Movie> getAllMovies() {
 //        return movieService.getAllMovies();
 //    }
-
+//
 //    @RequestMapping(method = RequestMethod.GET, value = "/movies/{id}")
 //    public Optional<Movie> getMovieById(@PathVariable Long id) {
 //        return movieService.getMovieById(id);
 //    }
-
+//
 //    @RequestMapping(method = RequestMethod.POST, value = "/movies")
 //    public void addMovie(@RequestBody Movie movie) {
 //        movieService.addMovie(movie);
 //    }
-
+//
 //    @RequestMapping(method = RequestMethod.PUT, value = "/movies/{id}")
 //    public void updateMovieById(@RequestBody Movie movie, @PathVariable Long id) {
 //        movieService.updateMovie(movie, id);
 //    }
-
+//
 //    @RequestMapping(method = RequestMethod.DELETE, value = "/movies/{id}")
 //    public void deleteMovieById(@PathVariable Long id) {
 //        movieService.deleteMovieById(id);

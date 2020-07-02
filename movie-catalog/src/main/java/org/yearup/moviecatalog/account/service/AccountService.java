@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.yearup.moviecatalog.account.model.Accounts;
 import org.yearup.moviecatalog.account.repo.AccountRepository;
+import org.yearup.moviecatalog.movie.domain.Movie;
 import org.yearup.moviecatalog.movie.exception.ResourceNotFoundException;
 import org.yearup.moviecatalog.movie.repository.MovieRepository;
 
@@ -19,16 +20,18 @@ public class AccountService {
     private AccountRepository accountRepository;
     private MovieRepository movieRepository;
 
-    protected void verifyAccount(Long accountId) throws ResourceNotFoundException {
-        Optional<Accounts> accounts = accountRepository.findById(accountId);
+    protected void verifyAccount(Long userId) throws ResourceNotFoundException {
+        Optional<Accounts> accounts = accountRepository.findById(userId);
         if (accounts.isEmpty()){
-            throw new ResourceNotFoundException("Account with id " + accountId + " not found");
+            throw new ResourceNotFoundException("User with id " + userId + " not found");
         }
     }
 
-    public void createAccount(Accounts accounts){
-        accountRepository.save(accounts);
+    public Accounts createAccount(Accounts accounts){
+       return accountRepository.save(accounts);
     }
+
+
 
     public List<Accounts> getAllAccounts(){
         List<Accounts> accounts = new ArrayList<>();
@@ -36,20 +39,20 @@ public class AccountService {
         return accounts;
     }
 
-    public Optional<Accounts> getAccountById(Long accountId){
-        return accountRepository.findById(accountId);
+    public Optional<Accounts> getAccountById(Long userId){
+        return accountRepository.findById(userId);
     }
 
-    public void updateAccount(Accounts account, Long accountId){
+    public void updateAccount(Accounts account, Long userId){
         for (Accounts accounts1 : accountRepository.findAll()){
-            if (accounts1.getUserId().equals(accountId)){
+            if (accounts1.getUserId().equals(userId)){
                 accountRepository.save(account);
             }
         }
     }
 
-    public void deleteAccountById(Long accountId){
-        accountRepository.deleteById(accountId);
+    public void deleteAccountById(Long userId){
+        accountRepository.deleteById(userId);
     }
 
 }
