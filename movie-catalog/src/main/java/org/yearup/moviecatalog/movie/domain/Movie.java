@@ -3,14 +3,12 @@ package org.yearup.moviecatalog.movie.domain;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.yearup.moviecatalog.account.model.Accounts;
 import org.yearup.moviecatalog.movie.enumerations.Genre;
 import org.yearup.moviecatalog.movie.enumerations.Rating;
 import org.yearup.moviecatalog.movie.enumerations.Recommended;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -38,6 +36,8 @@ public class Movie {
     @Enumerated
     private Recommended recommended;
 
+    @ManyToOne
+    private Accounts accounts;
     public Movie() {
     }
 

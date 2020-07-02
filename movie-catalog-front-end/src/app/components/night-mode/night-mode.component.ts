@@ -14,8 +14,11 @@ export class NightModeComponent implements OnInit {
 
   toggleDarkLight() {
     var body = document.getElementById("body");
+    var btn = document.getElementById("btn");
     var currentClass = body.className;
-    body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+    var currentBtn = btn.className;
+    body.className = currentClass == "light-mode" ? "dark-mode" : "light-mode";
+    btn.className = currentBtn == "btn btn-dark" ? "btn btn-light" : "btn btn-dark" 
   }
 
 }
